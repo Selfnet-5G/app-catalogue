@@ -81,6 +81,9 @@ Full documentation is available here: https://doi.org/10.18153/SLF-671672-D3_1
 
 ## Usage ##
 * compile: ./app-catalogue.sh compile
+
   clean:   ./app-catalogue.sh clea
+
   start:   ./app-catalogue.sh start
+
   stop:    ./app-catalogue.sh stop
