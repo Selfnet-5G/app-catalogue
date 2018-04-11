@@ -1,0 +1,36 @@
+{
+    "parameters":[
+        {
+            "config-action":"createFlows", 
+            "config-values":[
+                {
+                    "name":"IP", 
+                    "parameter":"source_ip"
+                }, 
+                {
+                    "name":"IP", 
+                    "parameter":"destination_ip"
+                }
+            ]
+        }, 
+        {
+            "config-action":"deleteAllFlows", 
+            "config-values":[
+            ]
+        }
+    ], 
+    "communication":
+{
+        "protocol":"REST", 
+        "endpoints":[
+            {
+                "config-action":"createFlows", 
+                "value":"[ { \"option\": \"ADD\", \"method\": \"POST\", \"endpoint\": \"http://{VNF_IP}:8082/createFlows\", \"body\": [ { \"source_ip\": \"{source_ip}\", \"destination_ip\": \"{destination_ip}\" } ] }, { \"option\": \"DELETE\", \"method\": \"DELETE\", \"endpoint\": \"http://{VNF_IP}:8082/deleteFlow\", \"body\": { \"source_ip\": \"{source_ip}\", \"destination_ip\": \"{destination_ip}\" } } ]"
+            }, 
+            {
+                "config-action": "deleteAllFlows",
+                "value": "[ { \"option\": \"ADD\", \"method\": \"DELETE\", \"endpoint\": \"http://{VNF_IP}:8082/deleteAllFlows\", \"body\": \"\" } ]"
+            }
+        ]
+    }
+}

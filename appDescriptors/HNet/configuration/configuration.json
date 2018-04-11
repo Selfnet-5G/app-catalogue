@@ -1,0 +1,39 @@
+{
+	"parameters":[
+		{
+			"config-action":"configureBotnet", 
+			"config-values":[
+				{
+					"name":"TEXT", 
+					"parameter":"typeOfBotnet"
+				}, 
+				{
+					"name":"IP", 
+					"parameter":"ccServer"
+				}, 
+				{
+					"name":"NUMBER", 
+					"parameter":"frequency"
+				}, 
+				{
+					"name":"TEXT", 
+					"parameter":"botnetReal"
+				}, 
+				{
+					"name":"TEXT", 
+					"parameter":"zombieID"
+				}
+			]
+		}
+	], 
+	"communication":
+    {
+		"protocol":"REST", 
+		"endpoints":[
+			{
+				"config-action":"configureBotnet", 
+				"value": "[ { \"option\": \"ADD\", \"method\": \"POST\", \"endpoint\": \"http://{VNFM_IP}:8081/core-rest-actions/vnf-instance/{VNFR_ID}/configure\", \"body\": { \"name\": \"configBotnet\", \"configurationParameters\": [ { \"confKey\": \"TYPE\", \"value\": \"{typeOfBotnet}\" }, { \"confKey\": \"FREQ\", \"value\": \"{frequency}\" }, { \"confKey\": \"BOT\", \"value\": \"{botnetReal}\" }, { \"confKey\": \"ZOMBIEUID\", \"value\": \"{zombieID}\" }, { \"confKey\": \"CCIP\", \"value\": \"{ccServer}\" }, { \"confKey\": \"CID\", \"value\": \"{SDN_MANAGER_TRANSACTION_ID}\" }, { \"confKey\": \"LOCALPORT\", \"value\": \"64{SDN_MANAGER_SEQUENCE_NUMBER_3_DIGIT_NEW}\" } ] } }, { \"option\": \"DELETE\", \"method\": \"DELETE\", \"endpoint\": \"http://{VNFM_IP}:8081/core-rest-actions/vnf-instance/{VNFR_ID}/configure?cid={SDN_MANAGER_TRANSACTION_ID}\", \"body\": \"\" } ]"
+			}
+		]
+	}
+}

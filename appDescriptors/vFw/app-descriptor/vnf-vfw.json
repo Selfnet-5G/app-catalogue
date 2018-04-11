@@ -1,0 +1,56 @@
+{
+ "name": "virtual-FW",
+ "vendor": "ALB/NXW",
+ "version": "1.0",
+ "lifecycle_event": [{
+  "event": "INSTANTIATE",
+  "lifecycle_events": [
+    "fwSetDefaultRoute.sh"
+  ]
+ },
+ {
+  "event": "CONFIGURE",
+  "lifecycle_events": [
+    "fwManageRule.sh"
+  ]
+ }, {
+  "event": "START",
+  "lifecycle_events": [
+    "fwStartup.sh"
+  ]
+ }
+ ],
+"vdu": [{
+  "vm_image": [],
+  "scale_in_out": 1,
+  "vnfc": [{
+   "connection_point": [{
+	"floatingIp" : "random",
+        "virtual_link_reference": "management",
+        "interfaceId": 0
+   },{
+       "virtual_link_reference": "fw_downstream",
+       "interfaceId": 1
+   },{
+       "virtual_link_reference": "fw_upstream",
+       "interfaceId": 2
+   }]
+  }],
+  "monitoring_parameter": [
+   "cpu_utilization"
+  ]
+ }],
+ 
+ "virtual_link": [{
+  "name": "management"
+ },{
+  "name": "fw_downstream"
+ },{
+  "name": "fw_upstream"
+ }],
+ "endpoint":"selfnet",
+ "type":"FW",
+ "deployment_flavour": [{
+  "flavour_key": "m2.medium"
+ }]
+}

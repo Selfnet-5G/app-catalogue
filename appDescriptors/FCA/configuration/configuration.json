@@ -1,0 +1,130 @@
+{
+	"parameters": [
+		{
+			"config-action": "dropFlow",
+			"config-values": [
+				{
+					"parameter": "resourceType",
+					"name": "name"
+				},
+				{
+					"parameter": "resourceId",
+					"name": "name"
+				},
+				{
+					"parameter": "parentResourceId",
+					"name": "name"
+				},
+				{
+					"parameter": "resourceAbstractionLayer",
+					"name": "name"
+				},
+				{
+					"parameter": "reporterId",
+					"name": "name"
+				},
+				{
+					"parameter": "state",
+					"name": "name"
+				},
+				{
+					"parameter": "encapsulationID1",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "encapsulationID2",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "encapsulationID3",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "encapsulationType1",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "encapsulationType2",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "encapsulationType3",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "encapsulationLayer",
+					"name": "name|NUMBER"
+				},
+				{
+					"parameter": "macSrc",
+					"name": "name"
+				},
+				{
+					"parameter": "macDst",
+					"name": "name"
+				},
+				{
+					"parameter": "l3Proto",
+					"name": "name"
+				},
+				{
+					"parameter": "srcIP",
+					"name": "name"
+				},
+				{
+					"parameter": "dstIP",
+					"name": "name"
+				},
+				{
+					"parameter": "l4Proto",
+					"name": "name"
+				},
+				{
+					"parameter": "srcPort",
+					"name": "name"
+				},
+				{
+					"parameter": "dstPort",
+					"name": "name"
+				},
+				{
+					"parameter": "l7Proto",
+					"name": "name"
+				},
+				{
+					"parameter": "l7Key1",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "l7Key2",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "l7Key3",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "l7Key4",
+					"name": "name|NULLABLE"
+				},
+				{
+					"parameter": "packetStructure",
+					"name": "name"
+				},
+				{
+					"parameter": "completePacketStructure",
+					"name": "name"
+				}
+			]
+		}
+	],
+	"communication": {
+		"protocol": "rabbitmq",
+		"endpoints": [
+			{
+				"config-action": "dropFlow",
+				"value": "[ { \"option\": \"ADD\", \"replySuccess\": { \"$.Action.resourceState\": \"DROPPED\", \"$.Action.resourceType\": \"ACTION\", \"$.Action.state\": \"SUCCESS\" }, \"host\": \"{host}\", \"vhost\": \"{vhost}\", \"username\": \"{username}\", \"userpassword\": \"{userpassword}\", \"exchangeName\": \"{exchangeName}\", \"topicName\": \"{topicName}\", \"exchangeType\": \"{exchangeType}\", \"queueName\": \"{queueName}\", \"passive\": \"{passive}\", \"durable\": \"{durable}\", \"exclusive\": \"{exclusive}\", \"autoDelete\": \"{autoDelete}\", \"routingKey\": \"intents.fca.{routingKey}\", \"body\": { \"Resources\": [ { \"resourceType\": \"{resourceType}\", \"resourceId\": \"{resourceId}\", \"parentResourceId\": \"{parentResourceId}\", \"resourceAbstractionLayer\": \"{resourceAbstractionLayer\", \"reporterId\": \"{reporterId}\", \"state\": \"{state}\", \"encapsulationID1\": \"{encapsulationID1}\", \"encapsulationID2\": \"{encapsulationID2}\", \"encapsulationID3\": \"{encapsulationID3}\", \"encapsulationType1\": \"{encapsulationType1}\", \"encapsulationType2\": \"{encapsulationType2}\", \"encapsulationType3\": \"{encapsulationType3}\", \"encapsulationLayer\": \"{encapsulationLayer}\", \"macSrc\": \"{macSrc}\", \"macDst\": \"{macDst}\", \"l3Proto\": \"{l3Proto}\", \"srcIP\": \"{srcIP}\", \"dstIP\": \"{dstIP}\", \"l4Proto\": \"{l4Proto}\", \"srcPort\": \"{srcPort}\", \"dstPort\": \"{dstPort}\", \"l7Proto\": \"{l7Proto}\", \"l7Key1\": \"{l7Key1}\", \"l7Key2\": \"{l7Key2}\", \"l7Key3\": \"{l7Key3}\", \"l7Key4\": \"{l7Key4}\", \"packetStructure\": \"{packetStructure}\", \"completePacketStructure\": \"{completePacketStructure}\" } ], \"Intent\": { \"actionType\": \"INSERT\", \"actionName\": \"DROP\", \"resourceId\": \"8AC0A107\" }, \"Params\": [ { \"paramName\": \"filterInterface\", \"paramValue\": \"eth13\" }, { \"paramName\": \"chain\", \"paramValue\": \"PREROUTING\" }, { \"paramName\": \"table\", \"paramValue\": \"mangle\" }, { \"paramName\": \"position\", \"paramValue\": \"top\" }, { \"paramName\": \"mode\", \"paramValue\": \"RELATIVE\" }, { \"paramName\": \"time\", \"paramValue\": \"50\" } ] } } ]"
+			}
+		]
+	}
+}

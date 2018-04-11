@@ -1,0 +1,22 @@
+ {
+	"app-family":"ACTUATOR", 
+	"app-class":"VNF", 
+	"app-type":"BOTNET",  
+	"app-name":"Honeynet", 
+	"app-version":"3.1", 
+	"public":"true", 
+	"upload":"false", 
+	"vm-images":[ {
+			"name":"honeynet",
+			"vimId":"a2ca3639-a1b5-45f3-a0d4-e9b0448a69b1",  
+			"link":"http://myurl.org/vms/honeynet",
+			"container-format":"BARE", 
+			"disk-format":"QCOW2"
+		}
+	],
+	"vims":[
+		"vim-selfnet-nix-2"
+	], 
+	"scripts-link":"https://github.com/gbernini/selfnet-vnf-scripts.git"
+}
+

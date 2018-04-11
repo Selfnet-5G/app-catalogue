@@ -1,0 +1,53 @@
+{
+ "name": "HoneyNet-VNF",
+ "vendor": "NXW/UMU",
+ "version": "3.1",
+ "lifecycle_event": [{
+  "event": "INSTANTIATE",
+  "lifecycle_events": [
+	"hnetSetDefaultRoute.sh"
+  ]
+ },
+ {
+  "event": "CONFIGURE",
+  "lifecycle_events": [
+	"hnetConnectClonedZombieToCandC.sh"
+  ]
+ }, {
+  "event": "START",
+  "lifecycle_events": [
+	"hnetStartup.sh"
+  ]
+ }
+ ],
+"vdu": [{
+  "vm_image": [],
+  "scale_in_out": 1,
+  "vnfc": [{
+   "connection_point": [{
+	"floatingIp" : "random",
+	"virtual_link_reference": "management",
+	"interfaceId": 1
+   },{
+	"floatingIp" : "random",
+        "virtual_link_reference": "selfnet_apps",
+	"interfaceId":0
+   }]
+  }],
+  "monitoring_parameter": [
+   "cpu_utilization"
+  ]
+ }],
+
+ 
+ "virtual_link": [{
+  "name": "selfnet_apps"
+ },{
+  "name": "management" 
+}],
+ "endpoint":"selfnet",
+ "type":"BOTNET",
+ "deployment_flavour": [{
+  "flavour_key": "m1.notsotiny"
+ }]
+}

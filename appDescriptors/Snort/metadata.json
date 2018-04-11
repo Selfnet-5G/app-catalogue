@@ -1,0 +1,22 @@
+{
+	"app-family":"SENSOR", 
+	"app-class":"VNF", 
+	"app-type":"DPI", 
+	"app-name":"Snort", 
+	"app-version":"3.1", 
+	"public":"true", 
+	"upload":"false", 
+	"vm-images":[ {
+			"name":"snort", 
+			"vimId":"05076c3a-e364-4366-a60f-c96d4c614229",
+			"link":"http://myurl.org/vms/1",
+			"container-format":"BARE", 
+			"disk-format":"QCOW2"
+		}
+	], 
+	"vims":[
+		"vim-selfnet-nix-2"
+	], 
+	"scripts-link":"https://github.com/gbernini/selfnet-vnf-scripts.git"
+}
+

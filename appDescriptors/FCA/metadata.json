@@ -1,0 +1,7 @@
+{
+	"app-family": "ACTUATOR",
+	"app-class": "PNF",
+	"app-type": "FCA",
+	"app-name": "FCA_policy_mg",
+	"app-version": "1.7"
+}

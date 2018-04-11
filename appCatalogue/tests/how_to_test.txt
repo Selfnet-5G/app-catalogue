@@ -1,0 +1,46 @@
+#################################################################################
+####################### HOW TO USE appCatalogue #################################
+#################################################################################
+
+# configure a VIM instance
+./test_configure_vim
+
+# onboard a VNF
+./test_onboard_vnf
+
+# onboard a SDN APP
+./test_onboard_sdn
+
+# onboard a PNF
+./test_onboard_pnf
+
+# get app package
+curl "http://localhost:8081/app-catalogue/app-packages/{id}"
+
+# disable app package
+curl -X PUT "http://localhost:8081/app-catalogue/app-packages/{id}/action?status=DISABLE"
+
+# enable app package
+curl -X PUT "http://localhost:8081/app-catalogue/app-packages/{id}/action?status=ENABLE"
+
+# offboard app package
+curl -X DELETE "http://localhost:8081/app-catalogue/app-packages/{id}"
+
+# get app packages onboarded
+curl "http://localhost:8081/app-catalogue/app-packages"
+
+# get list of app packages onboarded
+curl "http://localhost:8081/app-catalogue/app-packages/ids"
+
+# get VIM 
+curl "http://localhost:8081/app-catalogue/config/vims/{vim-name}"
+
+# get VIMs configured
+curl "http://localhost:8081/app-catalogue/config/vims"
+
+# delete VIM
+curl -X DELETE "http://localhost:8081/app-catalogue/config/vims/{vim-name}"
+
+#################################################################################
+#################################################################################
+#################################################################################

@@ -1,0 +1,22 @@
+{
+	"app-family":"ACTUATOR", 
+	"app-class":"VNF", 
+	"app-type":"FW", 
+	"app-name":"virtual-FW", 
+	"app-version":"1.0", 
+	"public":"true", 
+	"upload":"false", 
+	"vm-images":[ {
+			"name":"charisma-firewall-v1.0", 
+			"vimId":"f3b266e2-f263-4cfb-951d-ef68952660a2",
+			"link":"http://myurl.org/vms/1",
+			"container-format":"BARE", 
+			"disk-format":"QCOW2"
+		}
+	], 
+	"vims":[
+		"vim-selfnet-nix-2"
+	], 
+	"scripts-link":"https://github.com/gbernini/selfnet-vnf-scripts.git"
+}
+

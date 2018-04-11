@@ -1,0 +1,19 @@
+{
+  "vendor": "uws",
+  "name": "FCA_policy_mg",
+  "version": "1.6",
+  "lifecycle-actions": [
+    {
+      "event": "START",
+      "action": "start"
+    },
+    {
+      "event": "CONFIGURE",
+      "action": "configure"
+    },
+    {
+      "event": "STOP",
+      "action": "stop"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+ "name": "Snort-VNF",
+ "vendor": "Nextworks/UMU",
+ "version": "3.1",
+ "lifecycle_event": [{
+  "event": "INSTANTIATE",
+  "lifecycle_events": [
+	"snortSetDefaultRouteWithGtp.sh"
+  ]
+ },
+ {
+  "event": "CONFIGURE",
+  "lifecycle_events": [
+	"snortConfigureRule.sh"
+  ]
+ }, {
+  "event": "START",
+  "lifecycle_events": [
+	"snortStartupWithGtp.sh"
+  ]
+ }
+ ],
+"vdu": [{
+  "vm_image": [],
+  "scale_in_out": 1,
+  "vnfc": [{
+   "connection_point": [{
+	"floatingIp" : "random",
+        "virtual_link_reference": "management",
+        "interfaceId": 0
+   },{
+       "virtual_link_reference": "selfnet_apps",
+       "interfaceId": 1
+   }]
+  }],
+  "monitoring_parameter": [
+   "cpu_utilization"
+  ]
+ }],
+ 
+ "virtual_link": [{
+  "name": "management"
+ },{
+  "name": "selfnet_apps"
+ }],
+ "endpoint":"selfnet",
+ "type":"DPI",
+ "deployment_flavour": [{
+  "flavour_key": "m1.notsotiny"
+ }]
+}

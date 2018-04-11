@@ -1,0 +1,8 @@
+{
+	"vendor":  "nextworks",
+	"name": "FlowT_v5",
+	"type": "SDN_APP",
+	"version": "5.0",
+	"controller": "ODL"
+}
+

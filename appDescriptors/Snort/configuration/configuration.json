@@ -1,0 +1,38 @@
+{
+	"parameters": [
+		{
+			"config-action": "inspectFlow",
+			"config-values": [
+				{
+					"name": "IP",
+					"parameter": "srcIpAddress"
+				},
+				{
+					"name": "IP",
+					"parameter": "dstIpAddress"
+				},
+				{
+					"name": "NUMBER",
+					"parameter": "dstPort"
+				},
+				{
+					"name": "TEXT",
+					"parameter": "pattern"
+				},
+				{
+					"name": "TEXT",
+					"parameter": "alert"
+				}
+			]
+		}
+	],
+	"communication": {
+		"protocol": "REST",
+		"endpoints": [
+			{
+				"config-action": "inspectFlow",
+				"value": "[ { \"option\": \"ADD\", \"method\": \"POST\", \"endpoint\": \"http://{VNFM_IP}:8081/core-rest-actions/vnf-instance/{VNFR_ID}/configure\", \"body\": { \"name\": \"configRule\", \"configurationParameters\": [{ \"confKey\": \"ZOMBIEIP\", \"value\": \"{srcIpAddress}\" }, { \"confKey\": \"CCIP\", \"value\": \"{dstIpAddress}\" }, { \"confKey\": \"CCPORT\", \"value\": \"{dstPort}\" }, { \"confKey\": \"PARAMS\", \"value\": \"{pattern}\" }, { \"confKey\": \"MESSAGE\", \"value\": \"{alert}\" }, { \"confKey\": \"CID\", \"value\": \"1000{SDN_MANAGER_TRANSACTION_ID_SHORT}\" }] }  }, { \"option\": \"DELETE\", \"method\": \"DELETE\", \"endpoint\": \"http://{VNFM_IP}:8081/core-rest-actions/vnf-instance/{VNFR_ID}/configure?cid=1000{SDN_MANAGER_TRANSACTION_ID_SHORT}\", \"body\": \"\" } ]"
+			}
+		]
+	}
+}
