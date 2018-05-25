@@ -3,7 +3,7 @@
 	"app-class":"VNF", 
 	"app-type":"BOTNET",  
 	"app-name":"Honeynet", 
-	"app-version":"3.1", 
+	"app-version":"3.3", 
 	"public":"true", 
 	"upload":"false", 
 	"vm-images":[ {
