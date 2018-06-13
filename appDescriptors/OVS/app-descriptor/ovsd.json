@@ -1,0 +1,15 @@
+{
+  "vendor": "ALB",
+  "name": "OpenVSwitch",
+  "version": "1.0",
+  "lifecycle-actions": [
+    {
+      "event": "START",
+      "action": "start"
+    },
+    {
+      "event": "STOP",
+      "action": "stop"
+    }
+  ]
+}
