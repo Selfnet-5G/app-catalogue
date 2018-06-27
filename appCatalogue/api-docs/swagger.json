@@ -14,7 +14,7 @@
 			"url": "http://www.apache.org/licenses/LICENSE-2.0"
 		}
 	},
-	"host": "localhost:8081",
+	"host": "localhost:58081",
 	"basePath": "/",
 	"tags": [{
 		"name": "config-rest-controller",
@@ -96,26 +96,22 @@
 		"/app-catalogue/app-packages/ids": {
 			"get": {
 				"tags": ["app-package-rest-controller"],
-				"summary": "APP Packages Query - per app-class (app short-info list)",
-				"operationId": "getAppPackagesIdsFilteredByClassUsingGET",
+				"summary": "APP Packages Query - per app-type (app short-info list)",
+				"operationId": "getAppPackagesIdsFilteredByTypeUsingGET",
 				"consumes": ["application/json"],
 				"produces": ["*/*"],
 				"parameters": [{
-					"name": "app-class",
+					"name": "app-type",
 					"in": "query",
-					"description": "app-class",
+					"description": "app-type",
 					"required": true,
-					"type": "string",
-					"enum": ["VNF", "SDN_APP", "SDN_CTRL_APP", "PNF"]
+					"type": "string"
 				}],
 				"responses": {
 					"200": {
 						"description": "Success",
 						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/AppInfo"
-							}
+							"$ref": "#/definitions/AppInfo"
 						}
 					},
 					"401": {
@@ -1595,6 +1591,9 @@
 					"enum": ["ENABLED", "DISABLED"]
 				},
 				"type": {
+					"type": "string"
+				},
+				"version": {
 					"type": "string"
 				}
 			}
